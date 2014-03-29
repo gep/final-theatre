@@ -1,4 +1,4 @@
-Final theatre project
+Final theatre ticket management project
 =============
 
 My final python django project
