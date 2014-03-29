@@ -44,11 +44,9 @@ class CourierFormView(CourierAccessMixin, OrderFormView):
                         initial_ticket_data['is_yours'] = self.request.user.id == ticket.user.id
                         break
                 initial_tickets.append(initial_ticket_data)
-        # raise Exception(initial_tickets)
         return initial_tickets
 
     def form_valid(self, form):
-        # raise Exception(self.request.POST.get('cancel_order'))
         if self.request.POST.get('cancel_order') is not None:
             Ticket.objects.filter(production=self.production, user=User.objects.get(pk=int(self.request.POST.get('cancel_order')))).delete()
         elif self.request.POST.get('pay_order') is not None:
@@ -58,17 +56,8 @@ class CourierFormView(CourierAccessMixin, OrderFormView):
                     if seat.cleaned_data['ticket_id'] != 0 \
                             and seat.cleaned_data['user_id'] == order_user_id:
                         seat.instance = Ticket.objects.get(pk=seat.cleaned_data['ticket_id'])
-                        # raise Exception(seat.instance.user)
                         seat.instance.is_bought = True
                         seat.save()
                 elif int(seat.cleaned_data['ticket_id']) != 0:
                     Ticket.objects.get(pk=int(seat.cleaned_data['ticket_id']), user=User.objects.get(pk=order_user_id)).delete()
         return super(OrderFormView, self).form_valid(form)
-
-    # def form_invalid(self, form):
-    #     """
-    #     If the form is invalid, re-render the context data with the
-    #     data-filled form and errors.
-    #     """
-    #     raise Exception(form.errors)
-    #     return self.render_to_response(self.get_context_data(form=form))
