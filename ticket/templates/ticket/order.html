@@ -56,7 +56,7 @@
                 <input type="hidden" id="{{ seat_form.price.id_for_label }}" value="{{ seat_form.price.value }}" name="{{ seat_form.price.html_name }}" />
                 <button
                         type="button"
-                        class="btn seat {% if seat_form.is_yours.value %}active{% endif %} {% if seat_form.is_yours.value %}btn-success{% else %}btn-primary{% endif %} btn-xs"
+                        class="btn seat {% if seat_form.is_yours.value %}btn-success{% else %}btn-default{% endif %} btn-xs"
                         {% if seat_form.is_ordered.value and not seat_form.is_yours.value or view.is_past_due %}
                             disabled="disabled"
                         {% endif %}
@@ -120,14 +120,18 @@
                      return false;
                  }
 
-                 if (button.hasClass('active')){
-                     button.removeClass('active');
+                 if (button.hasClass('btn-success')){
+                     button.removeClass('btn-success');
+                     button.removeClass('btn-default');
+                     button.addClass('btn-default');
                      button.parent('.btn-group').find('input[name*=ordered]').first().val('False');
                  }else{
-                     button.addClass('active');
+                     button.removeClass('btn-default');
+                     button.addClass('btn-success');
                      button.parent('.btn-group').find('input[name*=ordered]').first().val('True');
-                     $('#total_price').text(calculate_total_price() + ' BYR')
+
                  }
+                 $('#total_price').text(calculate_total_price() + ' BYR')
                  return false;
              });
 
