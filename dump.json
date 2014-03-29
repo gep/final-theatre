@@ -1,0 +1,1143 @@
+[
+{
+    "pk": 1, 
+    "model": "auth.group", 
+    "fields": {
+        "name": "courier", 
+        "permissions": [
+            [
+                "add_logentry", 
+                "admin", 
+                "logentry"
+            ], 
+            [
+                "change_logentry", 
+                "admin", 
+                "logentry"
+            ], 
+            [
+                "delete_logentry", 
+                "admin", 
+                "logentry"
+            ], 
+            [
+                "add_contenttype", 
+                "contenttypes", 
+                "contenttype"
+            ], 
+            [
+                "change_contenttype", 
+                "contenttypes", 
+                "contenttype"
+            ], 
+            [
+                "delete_contenttype", 
+                "contenttypes", 
+                "contenttype"
+            ], 
+            [
+                "add_registrationprofile", 
+                "registration", 
+                "registrationprofile"
+            ], 
+            [
+                "change_registrationprofile", 
+                "registration", 
+                "registrationprofile"
+            ], 
+            [
+                "delete_registrationprofile", 
+                "registration", 
+                "registrationprofile"
+            ], 
+            [
+                "add_session", 
+                "sessions", 
+                "session"
+            ], 
+            [
+                "change_session", 
+                "sessions", 
+                "session"
+            ], 
+            [
+                "delete_session", 
+                "sessions", 
+                "session"
+            ], 
+            [
+                "add_play", 
+                "ticket", 
+                "play"
+            ], 
+            [
+                "change_play", 
+                "ticket", 
+                "play"
+            ], 
+            [
+                "delete_play", 
+                "ticket", 
+                "play"
+            ], 
+            [
+                "add_playproduction", 
+                "ticket", 
+                "playproduction"
+            ], 
+            [
+                "change_playproduction", 
+                "ticket", 
+                "playproduction"
+            ], 
+            [
+                "delete_playproduction", 
+                "ticket", 
+                "playproduction"
+            ], 
+            [
+                "add_seatcategory", 
+                "ticket", 
+                "seatcategory"
+            ], 
+            [
+                "change_seatcategory", 
+                "ticket", 
+                "seatcategory"
+            ], 
+            [
+                "delete_seatcategory", 
+                "ticket", 
+                "seatcategory"
+            ], 
+            [
+                "add_ticket", 
+                "ticket", 
+                "ticket"
+            ], 
+            [
+                "change_ticket", 
+                "ticket", 
+                "ticket"
+            ], 
+            [
+                "delete_ticket", 
+                "ticket", 
+                "ticket"
+            ]
+        ]
+    }
+},
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "admin", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-03-29T11:28:14Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$5jYUJGCfFMV7$Io6wLdaXLEQnlzPeZfA9NYQ7HmS2NVCdWcakfQ8mg8U=", 
+        "email": "andrew.semikov@gmail.com", 
+        "date_joined": "2014-03-24T18:53:04Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "gep", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-03-29T14:03:59Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$rCzlB9CvGB9q$Mpo0BgXjs2H3zejx6NUaXnU27TwlS5fwk+Ep/Vvva2g=", 
+        "email": "gep@osiacat.ru", 
+        "date_joined": "2014-03-26T08:46:34Z"
+    }
+},
+{
+    "pk": 3, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "gep2", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-03-29T12:54:39Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$hqtKSr7XuTN2$FuIV1Hpl+32FSa3hNH2uPMCJCCgt9Nj4ozosuzD8eO8=", 
+        "email": "gepard@osiacat.ru", 
+        "date_joined": "2014-03-26T12:09:10Z"
+    }
+},
+{
+    "pk": 4, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "courier", 
+        "first_name": "courier", 
+        "last_name": "courier", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": true, 
+        "last_login": "2014-03-29T13:41:54Z", 
+        "groups": [
+            [
+                "courier"
+            ]
+        ], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$8i2tDx1H6E2T$vSap43au7q7WIcgeRODSYQgtVpEUUQYyui24tGCOv58=", 
+        "email": "andrew2.semikov@gmail.com", 
+        "date_joined": "2014-03-27T18:27:42Z"
+    }
+},
+{
+    "pk": 5, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "User1", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-03-29T12:52:05Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$RyCN0yElbu6Y$TrHqb2jzJ85BZ0rdFnomK6yS35g+sJlnXby9WPCJM0E=", 
+        "email": "user1@example.com", 
+        "date_joined": "2014-03-29T12:52:04Z"
+    }
+},
+{
+    "pk": 1, 
+    "model": "ticket.play", 
+    "fields": {
+        "genre": "Absurdist fiction", 
+        "created_at": "2014-03-25T01:23:06Z", 
+        "name": "Waiting for Godot", 
+        "author": "Samuel Beckett"
+    }
+},
+{
+    "pk": 2, 
+    "model": "ticket.play", 
+    "fields": {
+        "genre": "Tragedy", 
+        "created_at": "2014-03-29T15:48:15Z", 
+        "name": "Macbeth", 
+        "author": "William Shakespeare"
+    }
+},
+{
+    "pk": 1, 
+    "model": "ticket.playproduction", 
+    "fields": {
+        "date": "2014-04-15", 
+        "play": 1
+    }
+},
+{
+    "pk": 2, 
+    "model": "ticket.playproduction", 
+    "fields": {
+        "date": "2014-03-31", 
+        "play": 1
+    }
+},
+{
+    "pk": 3, 
+    "model": "ticket.playproduction", 
+    "fields": {
+        "date": "2014-04-02", 
+        "play": 2
+    }
+},
+{
+    "pk": 4, 
+    "model": "ticket.playproduction", 
+    "fields": {
+        "date": "2014-04-03", 
+        "play": 2
+    }
+},
+{
+    "pk": 5, 
+    "model": "ticket.playproduction", 
+    "fields": {
+        "date": "2014-04-17", 
+        "play": 2
+    }
+},
+{
+    "pk": 1, 
+    "model": "ticket.seatcategory", 
+    "fields": {
+        "max_seats": 30, 
+        "price": 35000, 
+        "name": "Parter"
+    }
+},
+{
+    "pk": 2, 
+    "model": "ticket.seatcategory", 
+    "fields": {
+        "max_seats": 20, 
+        "price": 20000, 
+        "name": "Balcony"
+    }
+},
+{
+    "pk": 9, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-28T00:05:40Z", 
+        "number": 17, 
+        "production": 2, 
+        "is_bought": true, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 10, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-28T00:05:40Z", 
+        "number": 23, 
+        "production": 2, 
+        "is_bought": true, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 11, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-28T00:05:40Z", 
+        "number": 26, 
+        "production": 2, 
+        "is_bought": true, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 12, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-28T00:05:40Z", 
+        "number": 27, 
+        "production": 2, 
+        "is_bought": true, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 13, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-28T00:05:40Z", 
+        "number": 28, 
+        "production": 2, 
+        "is_bought": true, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 14, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-28T00:05:40Z", 
+        "number": 3, 
+        "production": 2, 
+        "is_bought": true, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 15, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-28T00:05:40Z", 
+        "number": 14, 
+        "production": 2, 
+        "is_bought": true, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 16, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-28T00:05:40Z", 
+        "number": 17, 
+        "production": 2, 
+        "is_bought": true, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 20, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T06:39:46Z", 
+        "number": 13, 
+        "production": 2, 
+        "is_bought": false, 
+        "user": [
+            "courier"
+        ]
+    }
+},
+{
+    "pk": 21, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T06:39:46Z", 
+        "number": 14, 
+        "production": 2, 
+        "is_bought": false, 
+        "user": [
+            "courier"
+        ]
+    }
+},
+{
+    "pk": 22, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 4, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 23, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 5, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 24, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 17, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 25, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 20, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 26, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 21, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 27, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 26, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 28, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 29, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 29, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 30, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 30, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 1, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 31, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T11:26:26Z", 
+        "number": 3, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 32, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 3, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "User1"
+        ]
+    }
+},
+{
+    "pk": 33, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 4, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "User1"
+        ]
+    }
+},
+{
+    "pk": 34, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 5, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "User1"
+        ]
+    }
+},
+{
+    "pk": 35, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 6, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "User1"
+        ]
+    }
+},
+{
+    "pk": 36, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 7, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "User1"
+        ]
+    }
+},
+{
+    "pk": 37, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 18, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "User1"
+        ]
+    }
+},
+{
+    "pk": 38, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 28, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "User1"
+        ]
+    }
+},
+{
+    "pk": 39, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 29, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "User1"
+        ]
+    }
+},
+{
+    "pk": 46, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 23, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 47, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 24, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 48, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 25, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 49, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 26, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 50, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 13, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 51, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T12:51:36Z", 
+        "number": 14, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep2"
+        ]
+    }
+},
+{
+    "pk": 57, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 7, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 58, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 8, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 59, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 18, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 60, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 19, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 64, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 21, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 65, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 22, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 66, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 2, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 67, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 12, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 68, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 6, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 69, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 9, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 70, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 11, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 71, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 2, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 72, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 10, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 73, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 19, 
+        "production": 3, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 74, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 16, 
+        "production": 5, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 75, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 17, 
+        "production": 5, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 76, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 18, 
+        "production": 5, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 77, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 20, 
+        "production": 5, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 78, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 22, 
+        "production": 5, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 79, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 10, 
+        "production": 5, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 80, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 16, 
+        "production": 4, 
+        "is_bought": true, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 81, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 1, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 28, 
+        "production": 4, 
+        "is_bought": true, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 82, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 1, 
+        "production": 4, 
+        "is_bought": true, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 83, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 8, 
+        "production": 4, 
+        "is_bought": true, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 84, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 19, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+},
+{
+    "pk": 85, 
+    "model": "ticket.ticket", 
+    "fields": {
+        "category": 2, 
+        "created_at": "2014-03-29T13:32:17Z", 
+        "number": 20, 
+        "production": 1, 
+        "is_bought": false, 
+        "user": [
+            "gep"
+        ]
+    }
+}
+]
