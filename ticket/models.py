@@ -8,6 +8,7 @@ class Play(models.Model):
     name = models.CharField(max_length=255)
     created_at = models.DateTimeField('date published')
     author = models.CharField(max_length=255)
+    description = models.TextField(default='')
 
     def __unicode__(self):
         return self.name

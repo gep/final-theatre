@@ -6,6 +6,7 @@ from ticket.views.courier import CourierView
 from ticket.views.courierform import CourierFormView
 from ticket.views.orderform import OrderFormView
 from ticket.views.play import PlayView
+from ticket.views.playinfo import PlayInfoView
 from ticket.views.report import CourierReportView
 
 admin.autodiscover()
@@ -26,6 +27,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^plays/list/$', PlayView.as_view(), name='play-list'),
+    url(r'^plays/info/(?P<play_id>\d+)$', PlayInfoView.as_view(), name='play-info'),
     url(r'^plays/order/(?P<production_id>\d+)$', OrderFormView.as_view(), name='order-form'),
 
     url(r'^plays/courier/(?P<production_id>\d+)$', CourierView.as_view(), name='courier'),

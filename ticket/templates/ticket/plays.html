@@ -9,7 +9,9 @@
                             {{ play.genre }}
                         </dt>
                         <dd>
-                            {{ play.author }} - {{ play.name }}
+                            <a href="https://www.google.com/search?client=ubuntu&sa=X&channel=fs&q={{ play.author }}" target="_blank">{{ play.author }}</a>
+                            -
+                            <a class="play-info" href="{% url 'play-info' play_id=play.id %}">{{ play.name }}</a>
                         </dd>
                         <dd>
                             {% for PlayProduction in play.playproduction_set.all %}
@@ -22,4 +24,38 @@
                 <li class="list-group-item">No plays yet.</li>
             {% endfor %}
         </ul>
+    <div class="modal fade" id="playinfo">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title">Play information</h2>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('.play-info').on('click', function(){
+            $.ajax({
+                url: $(this).attr('href'),
+                success: function(data){
+                    var modalWindow = $('#playinfo');
+                    modalWindow.find('div.modal-body').html(data);
+                    modalWindow.modal('show');
+                }
+            });
+            return false;
+        });
+    </script>
 {% endblock %}

@@ -138,7 +138,7 @@
         "is_active": true, 
         "is_superuser": true, 
         "is_staff": true, 
-        "last_login": "2014-03-29T11:28:14Z", 
+        "last_login": "2014-03-29T14:23:20Z", 
         "groups": [], 
         "user_permissions": [], 
         "password": "pbkdf2_sha256$12000$5jYUJGCfFMV7$Io6wLdaXLEQnlzPeZfA9NYQ7HmS2NVCdWcakfQ8mg8U=", 
@@ -228,6 +228,7 @@
     "fields": {
         "genre": "Absurdist fiction", 
         "created_at": "2014-03-25T01:23:06Z", 
+        "description": "Waiting for Godot\r\nPlay by Samuel Beckett\r\nWaiting for Godot is an absurdist play by Samuel Beckett, in which two characters, Vladimir and Estragon, wait endlessly and in vain for the arrival of someone named Godot. Wikipedia\r\nFirst performance: January 5, 1953\r\nPlaywright: Samuel Beckett\r\nCharacters: Estragon, Vladimir, Pozzo, Lucky\r\nGenres: Absurdist fiction, Fiction, Play, Drama", 
         "name": "Waiting for Godot", 
         "author": "Samuel Beckett"
     }
@@ -238,6 +239,7 @@
     "fields": {
         "genre": "Tragedy", 
         "created_at": "2014-03-29T15:48:15Z", 
+        "description": "Macbeth\r\nPlay by William Shakespeare\r\nMacbeth is a play written by William Shakespeare. It is considered one of his darkest and most powerful tragedies. Wikipedia\r\nFirst performance: April 1611\r\nPlaywright: William Shakespeare\r\nOriginal language: English\r\nGenre: Tragedy\r\nCharacters: Lady Macbeth, Banquo, Macbeth, Three Witches, More\r\nAdaptations: Macbeth (2007), Macbeth (2006), More", 
         "name": "Macbeth", 
         "author": "William Shakespeare"
     }
