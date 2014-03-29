@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul class="list-group">
+            {% for play in object_list %}
+                <li class="list-group-item">
+                    <dl>
+                        <dt>
+                            {{ play.genre }}
+                        </dt>
+                        <dd>
+                            {{ play.author }} - {{ play.name }}
+                        </dd>
+                        <dd>
+                            {% for PlayProduction in play.playproduction_set.all %}
+                                <a href="{% url 'order-form' production_id=PlayProduction.id %}">{{ PlayProduction.date|date:'m-d' }}</a>
+                            {% endfor %}
+                        </dd>
+                    </dl>
+                </li>
+            {% empty %}
+                <li class="list-group-item">No plays yet.</li>
+            {% endfor %}
+        </ul>
+{% endblock %}

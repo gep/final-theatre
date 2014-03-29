@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron" data-courier-form-url="">
+      <h1>{{ view.play.genre }}</h1>
+      <p>{{ view.play.author }} - {{ view.play.name }} <button data-toggle="modal" data-target="#report" id="report-button" class="btn btn-primary">Report</button></p>
+      <p>
+      {% for production in view.productions %}
+            {% if view.production == production %}
+                {{ production.date|date:'m-d' }}
+            {% else %}
+                <a href="{% url 'courier' production_id=production.id %}">{{ production.date|date:'m-d' }}</a>
+            {% endif %}
+       {% endfor %}
+       </p>
+    </div>
+    <ul class="list-group">
+      {%  for user in object_list %}
+        <li class="list-group-item">
+            <span class="glyphicon glyphicon-user"></span>
+            <span>
+                <strong>{{ user.username }}</strong> <span class="badge" id="ticket_count_{{ user.id }}">{{ user.ticket_count }}</span>
+            </span>
+            <span>
+                Total sum: <span class="label label-default" id="user_price_{{ user.id }}">{{ user.price_sum }}</span>
+            </span>
+            <span>BYR</span>
+            <button type="submit" name="pay_order" value="{{ user.id }}" class="btn btn-success btn-xs" {% if view.production.is_past_due %}disabled="disabled"{% endif %}><span class="glyphicon glyphicon-ok"></span> Pay order</button>
+            <button type="submit" name="cancel_order" value="{{ user.id }}" class="btn btn-danger btn-xs" {% if view.production.is_past_due %}disabled="disabled"{% endif %}><span class="glyphicon glyphicon-remove"></span> Cancel order</button>
+        </li>
+      {% empty %}
+        <li class="list-group-item">No orders yet</li>
+      {% endfor %}
+    </ul>
+
+    <div id="hall"></div>
+
+    <div class="modal fade" id="report">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title">Reports</h2>
+          </div>
+          <div class="modal-body">
+            <p></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+{% endblock %}
+
+{% block javascripts %}
+    {{ block.super }}
+    <script type="text/javascript">
+        function loadHall() {
+            $( "#hall" ).load( "{% url 'courier-form' production_id=view.production.id %}", function(){
+                    $('button.seat').on('click', function(){
+                     var button = $(this);
+                     if (button.attr('disabled')) {
+                         return false;
+                     }
+
+                     if (button.hasClass('btn-primary')){
+                         button.removeClass('btn-primary');
+                         button.addClass('btn-default');
+                         button.parent('.btn-group').find('input[name*=ordered]').first().val('False');
+                     }else{
+                         button.removeClass('btn-default');
+                         button.addClass('btn-primary');
+                         button.parent('.btn-group').find('input[name*=ordered]').first().val('True');
+                     }
+                     $('#user_price_' + button.data('user-id')).text(calculate_total_price(button.data('user-id')));
+                     $('#ticket_count_' + button.data('user-id')).text($('button.btn-primary[data-user-id="' + button.data('user-id') + '"]').length);
+                     return false;
+                 });
+            } );
+        }
+
+        $(function(){
+            $('button[name="pay_order"], button[name="cancel_order"]').click(function(){
+                var button = $(this).clone();
+                var form = $('form').first();
+                button.appendTo(form);
+                button.addClass('hide');
+                button.click();
+                return false;
+            });
+
+            $('#report-button').one('click', function(){
+                $.ajax({
+                    url: "{% url 'courier-report' production_id=view.production.id %}",
+                    success: function(data){
+                        $('#report').find('div.modal-body p').html(data);
+                    }
+                });
+            });
+
+            loadHall();
+        });
+
+        function calculate_total_price(user_id){
+             var total_price = 0;
+             $.each($('button.btn-primary[data-user-id="' + user_id + '"]').parent('.btn-group').find('input[name*=price]'), function(){
+                 total_price += parseInt($(this).val());
+             });
+             return total_price;
+        }
+    </script>
+{% endblock %}

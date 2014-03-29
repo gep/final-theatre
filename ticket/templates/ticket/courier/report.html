@@ -1,0 +1,64 @@
+{% load mathfilters %}
+
+{% block content %}
+    <h3>Seat category report</h3>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Seat categoty</th>
+                <th>Total tickets</th>
+                <th>Payed tickets</th>
+                <th>Ordered (not payed) tickets</th>
+                <th>Tickets left</th>
+                <th>Revenue</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in category_report.categories %}
+                <tr>
+                    <td>{{ report.category.name }}</td>
+                    <td>{{ report.category.max_seats }}</td>
+                    <td>{{ report.payed_tickets }}</td>
+                    <td>{{ report.tickets_amount|sub:report.payed_tickets }}</td>
+                    <td>{{ report.tickets_left }}</td>
+                    <td>{{ report.tickets_payed_money }} BYR</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="6"><strong>Total revenue: {{ category_report.total_sum }} BYR</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Users report</h3>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>User name</th>
+                <th>Email</th>
+                <th>Seat categories</th>
+                <th>Amount</th>
+                <th>Total cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in user_report.users %}
+                <tr>
+                    <td>{{ report.user.username }}</td>
+                    <td><a href="mailto:{{ report.user.email }}">{{ report.user.email }}</a></td>
+                    <td>
+                        {% for category in report.categories %}
+                            <span class="label label-default">{{ category.name }}</span>
+                        {% endfor %}
+                    </td>
+                    <td>{{ report.tickets_amount }}</td>
+                    <td>{{ report.total_cost }} BYR</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="5"><strong>Total cost: {{ user_report.total_sum }} BYR</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

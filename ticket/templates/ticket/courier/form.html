@@ -1,0 +1,36 @@
+{% block content %}
+    <form data-confirmed="0" method="post" action="{% url 'courier-form' production_id=view.production.id %}">
+        {% csrf_token %}
+        {{ form.management_form }}
+        {% for seat_form in form %}
+            <div class="btn-group">
+                <input type="hidden" id="{{ seat_form.production.id_for_label }}" value="{{ seat_form.production.value }}" name="{{ seat_form.production.html_name }}" />
+                <input type="hidden" id="{{ seat_form.category.id_for_label }}" value="{{ seat_form.category.value }}" name="{{ seat_form.category.html_name }}" />
+                <input type="hidden" id="{{ seat_form.is_ordered.id_for_label }}" value="{{ seat_form.is_ordered.value }}" name="{{ seat_form.is_ordered.html_name }}" />
+                <input type="hidden" id="{{ seat_form.is_yours.id_for_label }}" value="{{ seat_form.is_yours.value }}" name="{{ seat_form.is_yours.html_name }}" />
+                <input type="hidden" id="{{ seat_form.number.id_for_label }}" value="{{ seat_form.number.value }}" name="{{ seat_form.number.html_name }}" />
+                <input type="hidden" id="{{ seat_form.ticket_id.id_for_label }}" value="{{ seat_form.ticket_id.value }}" name="{{ seat_form.ticket_id.html_name }}" />
+                <input type="hidden" id="{{ seat_form.price.id_for_label }}" value="{{ seat_form.price.value }}" name="{{ seat_form.price.html_name }}" />
+                <input type="hidden" id="{{ seat_form.user_id.id_for_label }}" value="{{ seat_form.user_id.value }}" name="{{ seat_form.user_id.html_name }}" />
+                <button
+                        type="button"
+                        data-user-id="{{ seat_form.user_id.value }}"
+                        class="btn seat {% if seat_form.is_ordered.value and not seat_form.is_bought.value %}btn-primary{% elif seat_form.is_bought.value %}btn-warning{% else %}btn-default{% endif %} btn-xs"
+                        {% if not seat_form.is_ordered.value or view.is_past_due or seat_form.is_bought.value %}
+                            disabled="disabled"
+                        {% endif %}
+                        >
+                    <span class="glyphicon glyphicon-user"></span>
+                    {{ seat_form.number.value }}
+                    {% for category in view.categories %}
+                        {% if category.id == seat_form.category.value %}
+                            {{ category.name }}
+                        {% endif %}
+                    {% endfor %}
+                    {{ seat_form.user_name.value }}
+                </button>
+            </div>
+        {% endfor %}
+    </form>
+{% endblock %}
+
